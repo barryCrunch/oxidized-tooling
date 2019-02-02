@@ -30,7 +30,7 @@ def writeDB(devices):
 if __name__ == '__main__':
     nb = pynetbox.api(
         'http://netbox.fcstone.com',
-        token='0123456789abcdef0123456789abcdef01234567'
+        token=os.environ['NETBOX_TOKEN']
     )
     devices = pullDevices(nb)
     active_devices = validateDevices(devices)
